@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, MoveRight } from "lucide-react";
+import { loadImageAsset } from "../lib/loadImageAsset";
 import heroImage from "../assets/hero.jpg.asset.json";
 import { AnimatedWords } from "../components/motion";
 import { useReveal } from "../hooks/use-reveal";
@@ -23,7 +24,7 @@ function HomePage() {
   return (
     <main className="overflow-x-clip">
       <section className="home-hero">
-        <img src={heroImage.url} alt="Software developer working across multiple monitors in a dark studio" width={2000} height={1500} className="hero-image" />
+        <img src={loadImageAsset(heroImage)} alt="Software developer working across multiple monitors in a dark studio" width={2000} height={1500} className="hero-image" />
         <div className="hero-overlay" />
         <div className="hero-grid" aria-hidden="true" />
         <div className="relative mx-auto flex min-h-[760px] max-w-site items-end px-page pb-16 pt-36 sm:pb-24 lg:min-h-[850px]">
