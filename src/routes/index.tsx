@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Check, MoveRight } from "lucide-react";
-import heroImage from "../assets/hero-tech.jpg";
+import heroImage from "../assets/hero.jpg.asset.json";
 import { AnimatedWords } from "../components/motion";
 import { useReveal } from "../hooks/use-reveal";
 import { clientNames, process, projects, services } from "../lib/site-data";
@@ -23,7 +23,7 @@ function HomePage() {
   return (
     <main className="overflow-x-clip">
       <section className="home-hero">
-        <img src={heroImage} alt="Abstract blue glass forms representing connected software systems" width={1920} height={1088} className="hero-image" />
+        <img src={heroImage.url} alt="Software developer working across multiple monitors in a dark studio" width={2000} height={1500} className="hero-image" />
         <div className="hero-overlay" />
         <div className="hero-grid" aria-hidden="true" />
         <div className="relative mx-auto flex min-h-[760px] max-w-site items-end px-page pb-16 pt-36 sm:pb-24 lg:min-h-[850px]">
@@ -96,7 +96,7 @@ function HomePage() {
           <div className="project-editorial-grid mt-12">
             {projects.map((project, index) => (
               <Link key={project.slug} to="/case-studies/$slug" params={{ slug: project.slug }} className={`project-editorial-card group project-card-${index + 1}`} data-reveal>
-                <div className="media-frame"><img src={project.image} alt="Representative sample project" width={1408} height={912} loading="lazy" /></div>
+                <div className="media-frame photo-treatment"><img src={project.image} alt={project.imageAlt} width={1800} height={1200} loading="lazy" /></div>
                 <div className="project-card-copy"><div><p>{project.category}</p><span>{project.result}</span></div><h3>{project.title}</h3><span className="project-name">{project.name}</span></div>
               </Link>
             ))}
