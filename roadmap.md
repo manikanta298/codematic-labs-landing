@@ -5,6 +5,6 @@
 - [x] Add routed project detail views and working site navigation
 - [x] Add heading reveals, counters, image motion, and client marquee
 - [x] Refine the Home page with the approved dark editorial direction
-- [ ] Source and store real royalty-free photography for the hero, services, projects, and team content
-- [ ] Integrate photography with dark blue editorial treatments and meaningful alt text
-- [ ] Verify photography and layouts across affected routes at desktop and mobile sizes
+- [x] Source and store real royalty-free photography for the hero, services, projects, and team content
+- [x] Integrate photography with dark blue editorial treatments and meaningful alt text
+- [x] Verify photography and layouts across affected routes at desktop and mobile sizes
