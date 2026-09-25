@@ -3,16 +3,17 @@ import { useId } from "react";
 type BrandLogoProps = {
   inverted?: boolean;
   compact?: boolean;
+  nav?: boolean;
   className?: string;
 };
 
-export function BrandLogo({ inverted = false, compact = false, className = "" }: BrandLogoProps) {
+export function BrandLogo({ inverted = false, compact = false, nav = false, className = "" }: BrandLogoProps) {
   const gradientId = useId();
 
   return (
     <div className={`flex items-center gap-3 ${className}`} aria-label="Codematic Labs">
-      <div className="grid size-11 shrink-0 place-items-center rounded-full bg-logo-badge shadow-logo">
-        <svg viewBox="0 0 48 48" className="size-8" aria-hidden="true">
+      <div className={nav ? "grid size-9 shrink-0 place-items-center" : "grid size-11 shrink-0 place-items-center rounded-full bg-logo-badge shadow-logo"}>
+        <svg viewBox="0 0 48 48" className={nav ? "size-9" : "size-8"} aria-hidden="true">
           <defs>
             <linearGradient id={gradientId} x1="8" y1="8" x2="40" y2="41" gradientUnits="userSpaceOnUse">
               <stop stopColor="var(--logo-gradient-start)" />
@@ -28,11 +29,11 @@ export function BrandLogo({ inverted = false, compact = false, className = "" }:
           <div className={`whitespace-nowrap font-display text-sm font-extrabold tracking-[0.15em] ${inverted ? "text-nav-foreground" : "text-brand-ink"}`}>
             CODEMATIC LABS
           </div>
-          <div className="mt-2 flex items-center gap-2 whitespace-nowrap text-[0.46rem] font-bold tracking-[0.14em] text-muted-foreground">
+          {!nav && <div className="mt-2 flex items-center gap-2 whitespace-nowrap text-[0.46rem] font-bold tracking-[0.14em] text-muted-foreground">
             <span className="h-px w-3 bg-border" />
             BUILDING SOFTWARE. DELIVERING SOLUTIONS.
             <span className="h-px w-3 bg-border" />
-          </div>
+          </div>}
         </div>
       )}
     </div>
