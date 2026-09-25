@@ -1,4 +1,4 @@
-import logoAsset from "../assets/codematic-mark.png.asset.json";
+import logoAsset from "../assets/codematic-labs-full-logo.png.asset.json";
 
 type BrandLogoProps = {
   inverted?: boolean;
@@ -9,18 +9,11 @@ type BrandLogoProps = {
 
 export function BrandLogo({ inverted = false, compact = false, nav = false, className = "" }: BrandLogoProps) {
   return (
-    <div className={`flex items-center gap-3 ${className}`} aria-label="Codematic Labs">
-      <img
-        src={logoAsset.url}
-        alt=""
-        aria-hidden="true"
-        className={`${nav ? "size-10 sm:size-11" : "size-12"} shrink-0 object-contain`}
-      />
-      {!compact && (
-        <span className={`whitespace-nowrap font-display text-sm font-bold tracking-[0.12em] ${inverted ? "text-nav-foreground" : "text-foreground"}`}>
-          CODEMATIC LABS
-        </span>
-      )}
-    </div>
+    <img
+      src={logoAsset.url}
+      alt="Codematic Labs"
+      className={`${nav ? "h-14 sm:h-16" : "h-20"} ${compact ? "max-w-24 object-cover object-left" : "w-auto"} ${className}`}
+      data-inverted={inverted || undefined}
+    />
   );
 }
