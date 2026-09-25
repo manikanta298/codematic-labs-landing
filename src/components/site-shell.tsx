@@ -5,6 +5,7 @@ import { BrandLogo } from "./brand-logo";
 import { Button } from "./button";
 
 const navItems = [
+  { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
   { label: "Why us", to: "/why-us" },
   { label: "Case studies", to: "/case-studies" },
