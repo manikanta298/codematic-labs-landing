@@ -58,12 +58,12 @@ function Index() {
   useEffect(() => {
     const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      items.forEach((item) => item.dataset.visible = "true");
+      items.forEach((item) => item.dataset["visible"] = "true");
       return;
     }
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        (entry.target as HTMLElement).dataset.visible = "true";
+        (entry.target as HTMLElement).dataset["visible"] = "true";
         observer.unobserve(entry.target);
       }
     }), { threshold: 0.12 });
@@ -74,9 +74,9 @@ function Index() {
   return (
     <main className="overflow-x-clip bg-background text-foreground">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-nav-border bg-nav/90 backdrop-blur-xl">
-        <div className="mx-auto grid h-20 max-w-site grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-page sm:h-24">
+        <div className="mx-auto grid h-20 max-w-site grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-page sm:h-24 lg:grid-cols-[auto_minmax(0,1fr)_auto]">
           <a href="#top" className="min-w-0" aria-label="Codematic Labs home"><BrandLogo inverted /></a>
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+          <nav className="hidden items-center justify-center gap-7 lg:flex" aria-label="Main navigation">
             <a className="nav-link" href="#services">What we do <ChevronDown className="size-3.5" /></a>
             <a className="nav-link" href="#method">How we deliver <ChevronDown className="size-3.5" /></a>
             <a className="nav-link" href="#work">Our work</a>
