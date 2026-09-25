@@ -5,3 +5,5 @@
 - [x] Add routed project detail views and working site navigation
 - [x] Add hero media, heading reveals, counters, image motion, and client marquee
 - [x] Verify all routes at desktop and mobile sizes, interactions, metadata, and diagnostics
+- [ ] Refine the Home page with the approved dark editorial direction
+- [ ] Verify landing-page loops, motion, layout, links, and diagnostics
