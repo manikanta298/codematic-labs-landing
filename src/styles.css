@@ -49,6 +49,7 @@ body { margin: 0; background: var(--background); color: var(--foreground); font-
 button, a { -webkit-tap-highlight-color: transparent; }
 a { text-decoration: none; }
 .site-header { position: fixed; inset: 0 0 auto; z-index: 50; border-bottom: 1px solid var(--nav-border); background: var(--nav); backdrop-filter: blur(18px); }
+.brand-logo-nav { display: block; height: clamp(38px, 4.4vw, 50px); width: auto; aspect-ratio: 2.15 / 1; object-fit: cover; object-position: top center; }
 .nav-link { position: relative; color: var(--muted-foreground); font-size: .82rem; font-weight: 700; transition: color .2s; }
 .nav-link::after { content: ""; position: absolute; inset: auto 0 -.65rem; height: 2px; transform: scaleX(0); background: linear-gradient(90deg, var(--primary-glow), var(--primary)); transition: transform .25s; }
 .nav-link:hover, .nav-link-active { color: var(--foreground); }
